@@ -11,8 +11,10 @@ module.exports = {
         } else {
             return db.select().from('projects');
         }
-    }
+    },
 
-    
+    addProject: project => {
+        return db.insert(project).into('projects');
+    }
 
 }
