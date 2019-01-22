@@ -15,6 +15,22 @@ module.exports = {
 
     addProject: project => {
         return db.insert(project).into('projects');
+    },
+
+    getProjectActions: id => {
+        return db.select().from('actions').where('project_id', id);
+    },
+
+    getActions: id => {
+        if (id) {
+            return db.select().from('actions').where({ id });
+        } else {
+            return db.select().from('actions');
+        }
+    },
+
+    addAction: action => {
+        return db.insert(action).into('actions');
     }
 
 }
