@@ -7,9 +7,9 @@ exports.up = function(knex, Promise) {
         // other columns
         tbl.string('name', 256).unique().notNullable();
         tbl.text('description');
-        tbl.boolean('complet').notNullable();
-
+        tbl.boolean('complete').notNullable();
     });
+
 };
 
 exports.down = function(knex, Promise) {
